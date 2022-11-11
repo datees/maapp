@@ -2109,6 +2109,8 @@ class _MyHomePageState extends State<MyHomePage> {
   List<String> _letters = [];
   String _stringLetter = "";
   String _stringLetterShow = "";
+  bool isSwitched = false;
+  int letterNum = 12;
 
   String getRandomString(int length) => String.fromCharCodes(
         Iterable.generate(
@@ -2122,11 +2124,20 @@ class _MyHomePageState extends State<MyHomePage> {
   List<String> getList(int n, List<String> source) => source.sample(n);
 
   void _incrementCounter() {
-    setState(() {
-      _letters = getList(12, _words);
-      _stringLetter = _letters.join(" ");
-      _stringLetterShow = _letters.join("\n");
-    });
+    if (isSwitched){
+      setState(() {
+        _letters = getList(24, _words);
+        _stringLetter = _letters.join(" ");
+        _stringLetterShow = _letters.join(" ");
+      });
+    } else {
+      setState(() {
+        _letters = getList(12, _words);
+        _stringLetter = _letters.join(" ");
+        _stringLetterShow = _letters.join(" ");
+      });
+    }
+
     Clipboard.setData(ClipboardData(text: _stringLetter)).then((_) =>
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             duration: Duration(milliseconds: 100),
@@ -2142,6 +2153,24 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text("Creating $letterNum letters"),
+                Switch(
+                    value: isSwitched,
+                    onChanged: (value) {
+                      setState(() {
+                        isSwitched = value;
+                        if (isSwitched) {
+                          letterNum = 24;
+                        } else {
+                          letterNum = 12;
+                        }
+                      });
+                    }),
+              ],
+            ),
             const Text(
               'Tap the text to copy',
             ),
