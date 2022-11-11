@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+import 'package:moriapp/styles/colors.dart' as m_colors;
+import 'package:moriapp/styles/dimens.dart' as m_dimens;
+
+class ActionButton extends StatelessWidget {
+  const ActionButton({
+    Key? key,
+    required this.text,
+    required this.icon,
+    required this.callback,
+    required this.isMain,
+  }) : super(key: key);
+
+  final String text;
+  final IconData icon;
+  final VoidCallback callback;
+  final bool isMain;
+
+  final double actionButtonSizeBig = 56;
+  final double actionButtonSizeSmall = 44;
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    return GestureDetector(
+      onTap: callback,
+      child: Container(
+        height: isMain ? actionButtonSizeBig : actionButtonSizeSmall,
+        width: screenWidth * .7,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(m_dimens.roundedCorner),
+          color: isMain ? m_colors.colorMainButton : m_colors.colorDisabled,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              color: isMain ? m_colors.colorTextDark : m_colors.colorTextLight,
+              size: isMain
+                  ? actionButtonSizeBig / 2
+                  : actionButtonSizeSmall / 2.5,
+            ),
+            SizedBox(
+              width: m_dimens.defaultSpace,
+            ),
+            Text(
+              text,
+              style: TextStyle(
+                  fontSize: isMain ? 18 : 16,
+                  color: isMain
+                      ? m_colors.colorTextDark
+                      : m_colors.colorTextLight),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

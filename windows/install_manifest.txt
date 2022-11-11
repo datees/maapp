@@ -1,0 +1,15 @@
+D:/moriapp/build/windows/runner/Debug/data/icudtl.dat
+D:/moriapp/build/windows/runner/Debug/flutter_windows.dll
+D:/moriapp/build/windows/runner/Debug/screen_retriever_plugin.dll
+D:/moriapp/build/windows/runner/Debug/window_manager_plugin.dll
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/packages/window_manager/images/ic_chrome_close.png
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/packages/window_manager/images/ic_chrome_maximize.png
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/packages/window_manager/images/ic_chrome_minimize.png
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/packages/window_manager/images/ic_chrome_unmaximize.png
+D:/moriapp/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
